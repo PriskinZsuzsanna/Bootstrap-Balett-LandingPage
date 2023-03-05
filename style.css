@@ -1,0 +1,172 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+#home {
+    height: 100vh;
+    background: url(img/hero.jpg) no-repeat center top/cover;
+    position: relative;
+    z-index: 0;
+    animation: fadeIn 2s ease-out;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(252, 252, 252, 0.358);
+    z-index: -1;
+}
+
+#home.modal-open::before {
+    background: #0000009e;
+}
+
+#modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    max-width: 95%;
+    background: #fefefe;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: .7rem;
+}
+
+
+#nav {
+    animation: fadeIn 2s ease-out;
+}
+
+#home h1 {
+    animation: fadeInH1 2s ease-out;
+}
+
+#home p:not(#modal p) {
+    animation: fadeInP 2s ease-out;
+}
+
+#home button:not(#modal button) {
+    animation: fadeInBtn 2s ease-out;
+}
+
+section {
+    padding-block: 100px;
+}
+
+#about p {
+    text-align: justify;
+}
+
+.list-group-item {
+    flex-wrap: wrap;
+}
+
+#textarea {
+    height: 100px;
+    resize: none;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 2s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.col:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.thank-you {
+    animation: fadeInP 2s ease-out;
+    opacity: 1;
+}
+
+.thank-you.fade-away {
+    opacity: 0;
+    transition: all .5s ease-out;
+}
+
+.bi:hover {
+    color: #000000cc;
+    transition: all .3s ;
+}
+
+
+@keyframes fadeIn {
+    from {
+       opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInH1 {
+    from {
+       opacity: 0;
+       translate: -100px -100px;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@keyframes fadeInP {
+    from {
+       opacity: 0;
+       scale: 0;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes fadeInBtn {
+    from {
+       opacity: 0;
+       translate: 100px 100px;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+@media screen and (min-width: 600px){
+    #modal {
+        font-size: 1rem;
+    }
+}
+
+@media  screen and (min-width: 1400px) {
+    section {
+        padding-block: 160px;
+    }
+    .col:nth-child(2) {
+        transition-delay: 0;
+    }
+    
+}
+

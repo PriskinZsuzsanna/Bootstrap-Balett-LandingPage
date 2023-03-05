@@ -1,0 +1,29 @@
+body {
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: url(img/2.jpg) no-repeat center/cover;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(252, 252, 252, 0.358);
+    z-index: -1;
+}
+
+form {
+    animation: fadeIn 1s linear;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        scale: .5;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
