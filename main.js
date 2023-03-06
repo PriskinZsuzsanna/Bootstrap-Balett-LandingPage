@@ -15,6 +15,7 @@ hiddenElements.forEach((el) => observer.observe(el));
 //Form 
 const submitButton = document.querySelector('.submit');
 const thaksMessage = document.querySelector('.thank-you');
+const errorMessage = document.querySelector('.error-message');
 const inputName = document.querySelector('#name');
 const inputEmail = document.querySelector('#email');
 const inputTextarea = document.querySelector('#textarea');
@@ -22,17 +23,32 @@ const formSelect = document.querySelector('.form-select');
 
 submitButton.addEventListener('click', (e) => {
     e.preventDefault()
-    thaksMessage.classList.remove('d-none')
-    inputName.value = "";
-    inputEmail.value = "";
-    inputTextarea.value = "";
-    formSelect.value = 0;
-    setTimeout(() => {
-        thaksMessage.classList.add('fade-away')
-        thaksMessage.addEventListener('transitionend', () => {
-            thaksMessage.classList.add('d-none')
-        })
-    }, 4000)
+    if(inputName.value != "" && inputEmail.value != "" && inputTextarea.value != "") {
+        errorMessage.classList.add('d-none')
+        thaksMessage.classList.remove('fade-away')
+        thaksMessage.classList.remove('d-none')
+        inputName.value = "";
+        inputEmail.value = "";
+        inputTextarea.value = "";
+        formSelect.value = 0;
+        setTimeout(() => {
+            thaksMessage.classList.add('fade-away')
+            thaksMessage.addEventListener('transitionend', () => {
+                thaksMessage.classList.add('d-none')
+                
+            })
+        }, 5000)
+    } else {
+        thaksMessage.classList.add('d-none')
+        errorMessage.classList.remove('fade-away')
+        errorMessage.classList.remove('d-none')
+        setTimeout(() => {
+            errorMessage.classList.add('fade-away')
+            errorMessage.addEventListener('transitionend', () => {
+                errorMessage.classList.add('d-none')
+            })
+        }, 5000)
+    }
 });
 
 //Timetable

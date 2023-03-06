@@ -97,7 +97,8 @@ section {
     opacity: 1;
 }
 
-.thank-you.fade-away {
+.thank-you.fade-away,
+.error-message.fade-away {
     opacity: 0;
     transition: all .5s ease-out;
 }
@@ -105,6 +106,10 @@ section {
 .bi:hover {
     color: #000000cc;
     transition: all .3s ;
+}
+
+.error {
+    border: 1px solid red;
 }
 
 

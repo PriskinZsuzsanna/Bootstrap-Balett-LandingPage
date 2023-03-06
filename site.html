@@ -94,7 +94,7 @@
                         </tbody>
                       </table>
                       <p class="fw-bold">Egyéni órák megbeszélés szerint.</p>
-                    <button class="btn btn-outline-dark btn-md mt-3"  id="modal-close">Close</button>
+                    <button class="btn btn-dark btn-md mt-3"  id="modal-close">Vissza</button>
                 </div>
             </div>
 
@@ -193,15 +193,15 @@
                 <h2 class="mb-5 text-center hidden">Kapcsolat</h2>
                 <form class="w-75 d-flex flex-column my-3 mx-lg-5 hidden">
                     <div class="form-floating pb-3 w-100">
-                        <input type="text" class="form-control" id="name" placeholder="név">
+                        <input type="text" class="form-control" id="name" placeholder="név" required>
                         <label for="name">Név</label>
                     </div>
                     <div class="form-floating pb-3">
-                        <input type="text" class="form-control" id="email" placeholder="email">
+                        <input type="text" class="form-control" id="email" placeholder="email" required>
                         <label for="email">E-mail</label>
                     </div>
                     <div class="form-floating pb-3">
-                        <textarea class="form-control" placeholder="üzenet" id="textarea"></textarea>
+                        <textarea class="form-control" placeholder="üzenet" id="textarea" required></textarea>
                         <label for="textarea">Üzenet</label>
                     </div>
 
@@ -221,8 +221,13 @@
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-outline-dark submit">Küldés</button>
                     </div>
-                    <div class="d-none thank-you d-flex justify-content-center text-center mt-4 pt-3">
-                        <h3>Thank You for your message!</h3>
+                    <div class="d-none thank-you text-center mt-4 pt-3">
+                        <h3>Köszönjük!</h3>
+                        <p>Üzenetét rögzítettük!</p>
+                    </div>
+                    <div class="d-none error-message text-center mt-4 pt-3">
+                        <h3>Hiba!</h3>
+                        <p>Kérjük adja meg elérhetőségeit!</p>
                     </div>
                 </form>
             </div>
